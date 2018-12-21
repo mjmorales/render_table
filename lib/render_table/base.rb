@@ -13,7 +13,7 @@ class RenderTable::Base
   end
 
   def initialize(args = {})
-    @records     = args[:records]
+    @records     = args[:records]     || []
     @header      = args[:header]      || []
     @override    = args[:override]    || {}
     @table_id    = args[:table_id]    || RenderTable.configuration.table_id
@@ -22,12 +22,7 @@ class RenderTable::Base
   end
 
   def rows
-    # TODO: Add implementation for rendering rows and cells
-    row = OpenStruct.new
-    cell = OpenStruct.new
-    cell.value = 'Hello World'
-    row.cells = [cell]
-    [row]
+    RenderTable::Row.rows_for_table(self)
   end
 
   def render
