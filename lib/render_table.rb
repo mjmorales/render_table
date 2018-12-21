@@ -5,6 +5,7 @@ require 'render_table/base'
 require 'render_table/row'
 require 'render_table/cell'
 require 'render_table/table'
+require 'render_table/options'
 
 module RenderTable
   class << self
