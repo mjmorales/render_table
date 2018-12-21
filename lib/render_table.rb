@@ -1,5 +1,6 @@
 require 'render_table/version'
 require 'render_table/configuration'
+require 'render_table/html'
 require 'render_table/base'
 
 module RenderTable
