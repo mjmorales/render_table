@@ -19,8 +19,7 @@ class RenderTable::Cell
     record = @row.record
     overriden_header = @table.override[header]
     return overriden_header.call(record, @cell_index) if overriden_header
-    @row.record.send(header)
-  rescue NoMethodError
+    return record.send(header) if @row.record.respond_to? header
     RenderTable.configuration.cell_value
   end
 

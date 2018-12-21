@@ -50,5 +50,15 @@ RSpec.describe RenderTable::Cell do
 
       expect(subject.value).to eq 'hello world'
     end
+
+    it 'raises an exception' do
+      subject.header = :not_a_real_method
+      table.header = [:not_a_real_method]
+      table.override = {
+        not_a_real_method: ->(cell, _cell_index) { cell.not_a_real_method }
+      }
+
+      expect{ subject.value }.to raise_error NoMethodError
+    end
   end
 end
