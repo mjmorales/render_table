@@ -1,10 +1,9 @@
 require 'erb'
-require 'ostruct'
 
 class RenderTable::Base
   include ERB::Util
 
-  attr_accessor :records, :header, :html, :override, :table_id, :table_class
+  attr_accessor :records, :header, :html, :override, :table_id, :table_class, :options
 
   def self.render
     table = new
@@ -19,6 +18,7 @@ class RenderTable::Base
     @table_id    = args[:table_id]    || RenderTable.configuration.table_id
     @table_class = args[:table_class] || RenderTable.configuration.table_class
     @html        = args[:html]        || RenderTable.configuration.html
+    @options     = args[:options]
   end
 
   def rows
@@ -29,10 +29,18 @@ class RenderTable::Base
     ERB.new(template, 0, '%<>').result(binding)
   end
 
+  def context
+    binding
+  end
+
   private
 
   def table
     self
+  end
+
+  def options_cell(record, index)
+    RenderTable::Options.generate(table, @options, record, index)
   end
 
   def template
