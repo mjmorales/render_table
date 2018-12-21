@@ -7,6 +7,9 @@ class RenderTable::Table < RenderTable::Base
             <% table.header.each do |header| %>
               <th><%= header.to_s %></th>
             <% end %>
+            <% if table.options %>
+              <th></th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
@@ -16,6 +19,9 @@ class RenderTable::Table < RenderTable::Base
               <td id="<%= cell.id %>" class="<%= cell.class %>">
                 <%= cell.value %>
               </td>
+            <% end %>
+            <% if table.options %>
+              <td><%= options_cell(row.record, row.row_index) %></td>
             <% end %>
           </tr>
         <% end %>
