@@ -51,6 +51,22 @@ RSpec.describe RenderTable::Cell do
       expect(subject.value).to eq 'hello world'
     end
 
+    it 'uses a class for overrides' do
+      class OverrideClass
+        def self.call(record, index)
+          "#{record.class} - #{index}"
+        end
+      end
+
+      subject.header = :not_a_real_method
+      table.header = [:not_a_real_method]
+      table.override = {
+        not_a_real_method: OverrideClass
+      }
+
+      expect(subject.value).to eq 'Integer - 0'
+    end
+
     it 'raises an exception' do
       subject.header = :not_a_real_method
       table.header = [:not_a_real_method]
