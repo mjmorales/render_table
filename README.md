@@ -55,11 +55,11 @@ end
 ### Overrides 
 To override the value of a cell regardless of its header pass a hash of procedures mapped to the overriden header.
 ```ruby
-    <%= RenderTable::Table.render do |table| %>
+<%= RenderTable::Table.render do |table| %>
     <% table.records = User.all
     <% table.header = [:id, :not_a_real_method] %>
     <% table.override = {
-    not_a_real_method: ->(_cell, _cell_index) { 'hello world' }
+        not_a_real_method: ->(_cell, _cell_index) { 'hello world' }
     } %>
 <% end %>
 ```
@@ -85,6 +85,7 @@ class User::NameOverride
         record.name.upcase
     end
 end
+
 RenderTable::Table.render do |table|
     table.records = User.all
     table.header = [:id, :name]
