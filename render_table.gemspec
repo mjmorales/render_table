@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['manuel morales']
   spec.email         = ['morales.jmanuel16@gmail.com']
 
-  spec.summary       = 'A simple table DSL for creating standardized html tables.'
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = 'Extensible ruby html table building classes.'
+  spec.homepage      = "https://github.com/mjmorales/render_table."
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
