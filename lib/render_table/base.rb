@@ -5,8 +5,8 @@ class RenderTable::Base
 
   attr_accessor :records, :header, :html, :override, :table_id, :table_class, :options
 
-  def self.render
-    table = new
+  def self.render(args = {})
+    table = new(args)
     yield table
     table.render
   end
