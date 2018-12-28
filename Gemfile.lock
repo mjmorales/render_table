@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    render_table (0.1.0)
+    render_table (1.0.0)
 
 GEM
   remote: https://rubygems.org/
