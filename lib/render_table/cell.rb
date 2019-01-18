@@ -20,7 +20,7 @@ class RenderTable::Cell
     overriden_header = @table.override[header]
     return overriden_header.call(record, @cell_index) if overriden_header
     return record.send(header) if @row.record.respond_to? header
-    RenderTable.configuration.cell_value
+    RenderTable.config.cell_value
   end
 
   def class
