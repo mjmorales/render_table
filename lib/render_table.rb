@@ -16,4 +16,8 @@ module RenderTable
     self.configuration ||= RenderTable::Configuration.new
     yield(configuration)
   end
+
+  def self.config
+    self.configuration || RenderTable::Configuration.new
+  end
 end

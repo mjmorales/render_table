@@ -15,9 +15,9 @@ class RenderTable::Base
     @records     = args[:records]     || []
     @header      = args[:header]      || []
     @override    = args[:override]    || {}
-    @table_id    = args[:table_id]    || RenderTable.configuration.table_id
-    @table_class = args[:table_class] || RenderTable.configuration.table_class
-    @html        = args[:html]        || RenderTable.configuration.html
+    @table_id    = args[:table_id]    || RenderTable.config.table_id
+    @table_class = args[:table_class] || RenderTable.config.table_class
+    @html        = args[:html]        || RenderTable.config.html
     @options     = args[:options]
   end
 
