@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['morales.jmanuel16@gmail.com']
 
   spec.summary       = 'Extensible ruby html table building classes.'
-  spec.homepage      = "https://github.com/mjmorales/render_table."
+  spec.homepage      = "https://github.com/mjmorales/render_table"
   spec.license       = 'MIT'
 
   # Specify which files should be added to the gem when it is released.
