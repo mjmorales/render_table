@@ -1,4 +1,9 @@
 RSpec.describe RenderTable::Cell do
+  RenderTable.configure do |config|
+    config.table_id = 'test-table-id'
+    config.table_class = 'test-table-class'
+  end
+
   let(:records) { [1, '1', 1.0] }
   let(:table) { RenderTable::Table.new(records: records) }
 

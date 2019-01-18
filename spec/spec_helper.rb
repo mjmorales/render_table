@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'render_table_helper'
+require 'render_table'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
