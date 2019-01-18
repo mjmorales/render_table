@@ -11,12 +11,12 @@ class RenderTable::Configuration
   def self.default_html
     {
       rows: {
-        class: {},
-        id: {}
+        classes: {},
+        ids: {}
       },
       cells: {
-        class: {},
-        id: {}
+        classes: {},
+        ids: {}
       }
     }
   end
