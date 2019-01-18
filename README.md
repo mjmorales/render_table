@@ -214,6 +214,27 @@ RenderTable::DivTable.render do |table|
     table.header = [:id, :name]
 end
 ```
+
+# Changing defaults
+To modify the default values on rendered tables call the .configuration method from a required initializer.
+```ruby
+# config/render_table_config.rb
+  RenderTable.configure do |config|
+    config.table_id = 'test-table-id'
+    config.table_class = 'test-table-class'
+    config.cell_value = '---'
+    config.html = {
+        rows: {
+          classes: {},
+          ids: {}
+        },
+        cells: {
+          classes: {},
+          ids: {}
+        }
+      }
+  end
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
